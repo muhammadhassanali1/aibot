@@ -18,7 +18,9 @@ function App() {
     const match = responses.find((item) =>
       lowerMessage.includes(item.question.toLowerCase())
     );
-    return match ? match.response : "I'm not sure how to respond to that. Can you ask me something else?";
+    return match
+      ? match.response
+      : "I'm not sure how to respond to that. Can you ask me something else?";
   };
 
   const sendMessage = () => {
@@ -44,14 +46,16 @@ function App() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        background: "linear-gradient(135deg, #89cff0, #6a5acd)",
+        backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/5/5e/Student_with_cap_and_gown.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         color: "#ffffff",
         padding: "20px",
       }}
     >
       <div
         style={{
-          background: "#ffffff",
+          background: "rgba(255, 255, 255, 0.9)", // Transparent white background for readability
           color: "#333",
           width: "100%",
           maxWidth: "600px",
@@ -60,9 +64,23 @@ function App() {
           padding: "20px",
         }}
       >
+        {/* Welcome Header */}
         <h1 style={{ textAlign: "center", marginBottom: "10px", color: "#6a5acd" }}>
-          AI Chatbot
+          Welcome to AasaanScholarship.com
         </h1>
+
+        {/* Chatbot Title */}
+        <h1
+          style={{
+            textAlign: "center",
+            marginBottom: "10px",
+            color: "#4caf50",
+          }}
+        >
+          AasaanScholarship.com
+        </h1>
+
+        {/* Chat Window */}
         <div
           style={{
             border: "1px solid #ccc",
@@ -79,7 +97,7 @@ function App() {
               key={idx}
               style={{
                 textAlign: msg.sender === "AI" ? "left" : "right",
-                color: msg.sender === "AI" ? "#6a5acd" : "#333",
+                color: msg.sender === "AI" ? "#4caf50" : "#333",
                 fontStyle: msg.sender === "AI" ? "italic" : "normal",
                 fontWeight: "bold",
               }}
@@ -89,6 +107,8 @@ function App() {
             </p>
           ))}
         </div>
+
+        {/* Input and Button */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
@@ -107,7 +127,7 @@ function App() {
           <button
             onClick={sendMessage}
             style={{
-              background: "#6a5acd",
+              background: "#4caf50",
               color: "#ffffff",
               border: "none",
               padding: "10px 20px",
