@@ -1,82 +1,118 @@
 [
   {
-    "question": "hello",
-    "response": "Hi! How can I assist you today?"
+    "question": "what are scholarships",
+    "response": "Scholarships are financial awards given to students to help them pursue education without repayment. They can be based on merit, financial need, or specific skills."
   },
   {
-    "question": "hi",
-    "response": "Hello! What can I do for you?"
+    "question": "how do scholarships work",
+    "response": "Scholarships provide funding for tuition, living expenses, or both. Some are fully-funded, while others cover only part of the costs."
   },
   {
-    "question": "good morning",
-    "response": "Good morning! How's your day so far?"
+    "question": "are scholarships taxable",
+    "response": "In most cases, scholarships used for tuition and educational expenses are not taxable. Check your country’s tax laws for specific details."
   },
   {
-    "question": "good night",
-    "response": "Good night! Sweet dreams!"
+    "question": "do scholarships have age limits",
+    "response": "Some scholarships have age limits, while others do not. Always check the eligibility criteria for the specific scholarship."
   },
   {
-    "question": "what is my name",
-    "response": "I don't know your name yet! You can tell me."
+    "question": "can I apply for scholarships without IELTS",
+    "response": "Yes, some universities and organizations offer scholarships without requiring IELTS if you meet other language proficiency criteria."
   },
   {
-    "question": "how old are you",
-    "response": "I'm timeless, as I'm a chatbot!"
+    "question": "can I get a scholarship for online courses",
+    "response": "Yes, many platforms like Coursera and edX offer scholarships or financial aid for their online courses."
   },
   {
-    "question": "where are you from",
-    "response": "I'm from the digital world, here to assist you!"
+    "question": "are scholarships only for academic excellence",
+    "response": "No, scholarships can also be awarded for athletic skills, leadership, community service, or specific talents like art or music."
   },
   {
-    "question": "who made you",
-    "response": "I was created by Muhammad Hassan Ali to assist and entertain you!"
+    "question": "what is the difference between grants and scholarships",
+    "response": "Grants are often need-based and provided by governments or organizations, while scholarships can be merit-based or need-based."
   },
   {
-    "question": "what time is it",
-    "response": "The current time is ${new Date().toLocaleTimeString()}."
+    "question": "can I defer my scholarship",
+    "response": "Some scholarships allow deferral for a valid reason. Check with the scholarship provider for their policy."
   },
   {
-    "question": "what is the date",
-    "response": "Today's date is ${new Date().toLocaleDateString()}."
+    "question": "how competitive are scholarships",
+    "response": "Scholarships can be highly competitive, especially fully-funded ones. A strong application increases your chances."
   },
   {
-    "question": "what day is it",
-    "response": "It's a beautiful day, as always!"
+    "question": "do scholarships cover travel expenses",
+    "response": "Some fully-funded scholarships include travel expenses, while others do not. Check the details of the specific scholarship."
   },
   {
-    "question": "who is the president of the USA",
-    "response": "Currently, it's Joe Biden (as of 2025)."
+    "question": "what is a scholarship interview",
+    "response": "A scholarship interview is part of the selection process where applicants are assessed on their qualifications, goals, and personality."
   },
   {
-    "question": "what is the capital of France",
-    "response": "The capital of France is Paris."
+    "question": "how can I prepare for a scholarship interview",
+    "response": "To prepare:\n- Research the scholarship and provider\n- Practice common interview questions\n- Be clear about your goals and achievements."
   },
   {
-    "question": "how many continents are there",
-    "response": "There are seven continents on Earth."
+    "question": "are there scholarships for women",
+    "response": "Yes, many scholarships specifically support women to promote gender equality in education and career fields."
   },
   {
-    "question": "tell me a joke",
-    "response": "Why don’t skeletons fight each other? They don’t have the guts!"
+    "question": "what are sports scholarships",
+    "response": "Sports scholarships are awarded to students with exceptional athletic skills. These often cover tuition and other expenses."
   },
   {
-    "question": "another joke",
-    "response": "Why did the scarecrow win an award? Because he was outstanding in his field!"
+    "question": "are there scholarships for medical students",
+    "response": "Yes, many organizations and universities offer scholarships specifically for medical students, often with service commitments."
   },
   {
-    "question": "inspire me",
-    "response": "The only way to do great work is to love what you do. - Steve Jobs"
+    "question": "how do I write a recommendation letter for a scholarship",
+    "response": "A recommendation letter should highlight the applicant’s strengths, achievements, and potential. Focus on specific examples of excellence."
   },
   {
-    "question": "give me a quote",
-    "response": "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+    "question": "can I get a scholarship for studying abroad",
+    "response": "Yes, many scholarships are available for international students, including government-funded programs like Fulbright and Chevening."
   },
   {
-    "question": "tell me a fun fact",
-    "response": "Did you know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old!"
+    "question": "what are government scholarships",
+    "response": "Government scholarships are funded by national or regional governments to support students' education. Examples include HEC scholarships in Pakistan and DAAD in Germany."
   },
   {
-    "question": "give me a fact",
-    "response": "A group of flamingos is called a 'flamboyance'!"
+    "question": "are scholarships renewable every year",
+    "response": "Some scholarships are renewable based on your academic performance or other criteria. Check the specific scholarship's terms."
+  },
+  {
+    "question": "can I get a scholarship after admission",
+    "response": "Yes, some universities offer scholarships to enrolled students based on merit or financial need."
+  },
+  {
+    "question": "how do I improve my chances of getting a scholarship",
+    "response": "To improve your chances:\n- Apply early\n- Focus on your SOP and recommendation letters\n- Ensure you meet all criteria."
+  },
+  {
+    "question": "are there scholarships for specific fields of study",
+    "response": "Yes, many scholarships are designed for specific fields like engineering, medicine, education, or the arts."
+  },
+  {
+    "question": "can scholarships be combined with other financial aid",
+    "response": "Some scholarships allow you to combine them with financial aid or other scholarships. Always check the terms and conditions."
+  },
+  {
+    "question": "what happens if I fail to meet scholarship requirements",
+    "response": "Failing to meet requirements may result in the scholarship being withdrawn. Some providers may allow a grace period to improve performance."
+  },
+  {
+    "question": "do I need work experience for scholarships",
+    "response": "Some scholarships, especially for postgraduate studies, require work experience. Check the eligibility criteria for details."
+  },
+  {
+    "question": "are there scholarships for people with disabilities",
+    "response": "Yes, many organizations offer scholarships specifically for individuals with disabilities to support inclusive education."
+  },
+  {
+    "question": "how do I find scholarships for specific countries",
+    "response": "You can find scholarships for specific countries by:\n- Visiting university websites\n- Checking government programs\n- Using scholarship databases."
+  },
+  {
+    "question": "can I apply for scholarships with a gap year",
+    "response": "Yes, many scholarships accept applications from students who have taken a gap year, as long as you meet the criteria."
   }
 ]
