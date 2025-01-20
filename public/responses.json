@@ -1,55 +1,82 @@
-import json
-
-# Define categories and templates
-categories = {
-    "greetings": [
-        ("hello", "Hi! How can I assist you today?"),
-        ("hi", "Hello! What can I do for you?"),
-        ("good morning", "Good morning! How's your day so far?"),
-        ("good night", "Good night! Sweet dreams!"),
-    ],
-    "personal": [
-        ("what is my name", "I don't know your name yet! You can tell me."),
-        ("how old are you", "I'm timeless, as I'm a chatbot!"),
-        ("where are you from", "I'm from the digital world, here to assist you!"),
-        ("who made you", "I was created by Muhammad Hassan Ali to assist and entertain you!"),
-    ],
-    "time_date": [
-        ("what time is it", "The current time is ${new Date().toLocaleTimeString()}."),
-        ("what is the date", "Today's date is ${new Date().toLocaleDateString()}."),
-        ("what day is it", "It's a beautiful day, as always!"),
-    ],
-    "general_knowledge": [
-        ("who is the president of the USA", "Currently, it's Joe Biden (as of 2025)."),
-        ("what is the capital of France", "The capital of France is Paris."),
-        ("how many continents are there", "There are seven continents on Earth."),
-    ],
-    "jokes": [
-        ("tell me a joke", "Why don’t skeletons fight each other? They don’t have the guts!"),
-        ("another joke", "Why did the scarecrow win an award? Because he was outstanding in his field!"),
-    ],
-    "quotes": [
-        ("inspire me", "The only way to do great work is to love what you do. - Steve Jobs"),
-        ("give me a quote", "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"),
-    ],
-    "fun_facts": [
-        ("tell me a fun fact", "Did you know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old!"),
-        ("give me a fact", "A group of flamingos is called a 'flamboyance'!"),
-    ],
-}
-
-# Generate questions and answers
-data = []
-for category, items in categories.items():
-    for i in range(1, 451):  # Generate up to 450 questions per category
-        for question, answer in items:
-            data.append({
-                "question": f"{question} {i}",
-                "response": answer
-            })
-
-# Save to responses.json
-with open("responses.json", "w") as f:
-    json.dump(data[:3000], f, indent=2)
-
-print("responses.json with 3000 entries created!")
+[
+  {
+    "question": "hello",
+    "response": "Hi! How can I assist you today?"
+  },
+  {
+    "question": "hi",
+    "response": "Hello! What can I do for you?"
+  },
+  {
+    "question": "good morning",
+    "response": "Good morning! How's your day so far?"
+  },
+  {
+    "question": "good night",
+    "response": "Good night! Sweet dreams!"
+  },
+  {
+    "question": "what is my name",
+    "response": "I don't know your name yet! You can tell me."
+  },
+  {
+    "question": "how old are you",
+    "response": "I'm timeless, as I'm a chatbot!"
+  },
+  {
+    "question": "where are you from",
+    "response": "I'm from the digital world, here to assist you!"
+  },
+  {
+    "question": "who made you",
+    "response": "I was created by Muhammad Hassan Ali to assist and entertain you!"
+  },
+  {
+    "question": "what time is it",
+    "response": "The current time is ${new Date().toLocaleTimeString()}."
+  },
+  {
+    "question": "what is the date",
+    "response": "Today's date is ${new Date().toLocaleDateString()}."
+  },
+  {
+    "question": "what day is it",
+    "response": "It's a beautiful day, as always!"
+  },
+  {
+    "question": "who is the president of the USA",
+    "response": "Currently, it's Joe Biden (as of 2025)."
+  },
+  {
+    "question": "what is the capital of France",
+    "response": "The capital of France is Paris."
+  },
+  {
+    "question": "how many continents are there",
+    "response": "There are seven continents on Earth."
+  },
+  {
+    "question": "tell me a joke",
+    "response": "Why don’t skeletons fight each other? They don’t have the guts!"
+  },
+  {
+    "question": "another joke",
+    "response": "Why did the scarecrow win an award? Because he was outstanding in his field!"
+  },
+  {
+    "question": "inspire me",
+    "response": "The only way to do great work is to love what you do. - Steve Jobs"
+  },
+  {
+    "question": "give me a quote",
+    "response": "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+  },
+  {
+    "question": "tell me a fun fact",
+    "response": "Did you know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old!"
+  },
+  {
+    "question": "give me a fact",
+    "response": "A group of flamingos is called a 'flamboyance'!"
+  }
+]
