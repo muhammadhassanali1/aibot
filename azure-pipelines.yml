@@ -1,0 +1,64 @@
+trigger:
+- main
+
+variables:
+  azureSubscription: 'Smart Cloud Solutions-MPN' # Azure subscription name
+  webAppName: 'aibot'                           # Web App name
+  environmentName: 'aibot-environment'          # Custom environment name
+  vmImageName: 'ubuntu-latest'                  # Agent VM image
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '20.x'                     # Ensure Node.js version matches your runtime
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+        npm run build
+      displayName: 'Install dependencies and build app'
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive build folder'
+      inputs:
+        rootFolderOrFile: 'build'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      artifact: drop
+
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy to Azure App Service
+    environment: $(environmentName)
+    pool:
+      vmImage: $(vmImageName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureRmWebAppDeployment@4
+            displayName: 'Azure App Service Deploy: $(webAppName)'
+            inputs:
+              azureSubscription: $(azureSubscription) # Use subscription variable
+              appType: webAppLinux                    # Ensure this matches your App Service OS
+              WebAppName: $(webAppName)               # Use web app name variable
+              packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              RuntimeStack: 'NODE|20LTS'              # Ensure Node.js runtime stack matches
+              StartupCommand: ''                      # Leave blank for static deployments
