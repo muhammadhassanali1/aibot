@@ -7,7 +7,6 @@ trigger:
 - main
 
 variables:
-
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: 'ea95c00c-0b44-4279-82e8-404304e6f7cc'
 
@@ -30,16 +29,26 @@ stages:
       vmImage: $(vmImageName)
 
     steps:
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
+    - task: NodeTool@0
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        versionSpec: '20.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+        npm run build
+      displayName: 'Install dependencies and build app'
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive build folder'
+      inputs:
+        rootFolderOrFile: 'build'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
 
 - stage: Deploy
@@ -48,7 +57,7 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: Deploy
-    displayName: Deploy
+    displayName: Deploy to Azure App Service
     environment: $(environmentName)
     pool:
       vmImage: $(vmImageName)
@@ -57,15 +66,11 @@ stages:
         deploy:
           steps:
           - task: AzureRmWebAppDeployment@4
-            displayName: 'Azure App Service Deploy: aibot'
+            displayName: 'Azure App Service Deploy: $(webAppName)'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               WebAppName: $(webAppName)
               packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               RuntimeStack: 'NODE|20LTS'
-              StartupCommand: 'npm run start'
-              ScriptType: 'Inline Script'
-              InlineScript: |
-                npm install
-                npm run build --if-present
+              StartupCommand: ''
