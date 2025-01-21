@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [messages, setMessages] = useState([]); // Stores the conversation messages
-  const [input, setInput] = useState(""); // Stores the user input
-  const [responses, setResponses] = useState([]); // Stores the fetched responses
+  const [messages, setMessages] = useState([]); // Conversation messages
+  const [input, setInput] = useState(""); // User input
+  const [responses, setResponses] = useState([]); // Bot responses
 
-  // Load responses from the JSON file in the public folder
+  // Load responses from the JSON file
   useEffect(() => {
-    fetch("/responses.json") // Fetches the responses.json file
+    fetch("/responses.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -32,17 +32,28 @@ function App() {
       : "I'm not sure how to respond to that. Can you ask me something else?";
   };
 
+  // Speak the bot's response
+  const speak = (text) => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    synth.speak(utterance);
+  };
+
   // Handle sending a message
   const sendMessage = () => {
     if (input.trim()) {
-      setMessages([...messages, { sender: "User", text: input }]);
+      const userMessage = { sender: "User", text: input };
+      setMessages([...messages, userMessage]);
+
       const response = getResponse(input);
+      const botMessage = { sender: "HealthGuru", text: response };
+
       setTimeout(() => {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { sender: "HealthGuru", text: response },
-        ]);
+        setMessages((prevMessages) => [...prevMessages, botMessage]);
+        speak(response); // Speak the bot's response
       }, 1000);
+
       setInput("");
     }
   };
