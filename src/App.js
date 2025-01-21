@@ -41,22 +41,18 @@ function App() {
     synth.speak(utterance);
   };
 
-  // Handle sending a message
-  const sendMessage = () => {
-    if (input.trim()) {
-      const userMessage = { sender: "User", text: input };
-      setMessages([...messages, userMessage]);
+  // Automatically handle sending a message after speaking
+  const handleSendMessage = (message) => {
+    const userMessage = { sender: "User", text: message };
+    setMessages((prevMessages) => [...prevMessages, userMessage]);
 
-      const response = getResponse(input);
-      const botMessage = { sender: "HealthGuru", text: response };
+    const response = getResponse(message);
+    const botMessage = { sender: "HealthGuru", text: response };
 
-      setTimeout(() => {
-        setMessages((prevMessages) => [...prevMessages, botMessage]);
-        speak(response); // Speak the bot's response
-      }, 1000);
-
-      setInput("");
-    }
+    setTimeout(() => {
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+      speak(response); // Speak the bot's response
+    }, 1000);
   };
 
   // Start speech recognition
@@ -72,6 +68,7 @@ function App() {
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
       setInput(transcript); // Populate the input with the recognized speech
+      handleSendMessage(transcript); // Automatically send the message
       setIsListening(false);
     };
 
@@ -156,7 +153,7 @@ function App() {
           ))}
         </div>
 
-        {/* Input, Listen, and Ask Buttons */}
+        {/* Input and Speak Button */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
@@ -170,7 +167,8 @@ function App() {
               marginRight: "10px",
               fontSize: "16px",
             }}
-            placeholder="Type your health question..."
+            placeholder="Type your health question or click Speak..."
+            disabled
           />
           <button
             onClick={startListening}
@@ -185,21 +183,7 @@ function App() {
               marginRight: "10px",
             }}
           >
-            {isListening ? "Listening..." : "Listen"}
-          </button>
-          <button
-            onClick={sendMessage}
-            style={{
-              background: "#4caf50",
-              color: "#ffffff",
-              border: "none",
-              padding: "10px 20px",
-              borderRadius: "5px",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-          >
-            Ask
+            {isListening ? "Listening..." : "Speak"}
           </button>
         </div>
       </div>
