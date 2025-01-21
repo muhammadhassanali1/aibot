@@ -4,6 +4,7 @@ function App() {
   const [messages, setMessages] = useState([]); // Conversation messages
   const [input, setInput] = useState(""); // User input
   const [responses, setResponses] = useState([]); // Bot responses
+  const [isListening, setIsListening] = useState(false); // Tracks listening state
 
   // Load responses from the JSON file
   useEffect(() => {
@@ -56,6 +57,34 @@ function App() {
 
       setInput("");
     }
+  };
+
+  // Start speech recognition
+  const startListening = () => {
+    const recognition = new window.webkitSpeechRecognition() || new window.SpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+
+    recognition.onstart = () => {
+      setIsListening(true);
+    };
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript); // Populate the input with the recognized speech
+      setIsListening(false);
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Speech recognition error:", event.error);
+      setIsListening(false);
+    };
+
+    recognition.onend = () => {
+      setIsListening(false);
+    };
+
+    recognition.start();
   };
 
   return (
@@ -127,7 +156,7 @@ function App() {
           ))}
         </div>
 
-        {/* Input and Ask Button */}
+        {/* Input, Listen, and Ask Buttons */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
@@ -144,6 +173,21 @@ function App() {
             placeholder="Type your health question..."
           />
           <button
+            onClick={startListening}
+            style={{
+              background: isListening ? "#ffcc00" : "#007bff",
+              color: "#ffffff",
+              border: "none",
+              padding: "10px 20px",
+              borderRadius: "5px",
+              fontSize: "16px",
+              cursor: "pointer",
+              marginRight: "10px",
+            }}
+          >
+            {isListening ? "Listening..." : "Listen"}
+          </button>
+          <button
             onClick={sendMessage}
             style={{
               background: "#4caf50",
@@ -153,7 +197,6 @@ function App() {
               borderRadius: "5px",
               fontSize: "16px",
               cursor: "pointer",
-              boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
             }}
           >
             Ask
