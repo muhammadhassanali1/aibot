@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [messages, setMessages] = useState([]); // Conversation messages
-  const [input, setInput] = useState(""); // User input
   const [responses, setResponses] = useState([]); // Bot responses
   const [isListening, setIsListening] = useState(false); // Tracks listening state
 
@@ -22,7 +21,7 @@ function App() {
   // Get a response for the user's input
   const getResponse = (message) => {
     if (!responses || responses.length === 0) {
-      return "Sorry, I couldn't load my knowledge base. Please try again later.";
+      return "⚠️ Sorry, I couldn't load my knowledge base. Please try again later.";
     }
     const lowerMessage = message.toLowerCase();
     const match = responses.find((item) =>
@@ -30,7 +29,7 @@ function App() {
     );
     return match
       ? match.response
-      : "I'm not sure how to respond to that. Can you ask me something else?";
+      : "🤔 I'm not sure how to respond to that. Can you ask me something else?";
   };
 
   // Speak the bot's response
@@ -47,7 +46,7 @@ function App() {
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     const response = getResponse(message);
-    const botMessage = { sender: "HealthGuru", text: response };
+    const botMessage = { sender: "HealthGuru 🤖", text: response };
 
     setTimeout(() => {
       setMessages((prevMessages) => [...prevMessages, botMessage]);
@@ -67,7 +66,6 @@ function App() {
 
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
-      setInput(transcript); // Populate the input with the recognized speech
       handleSendMessage(transcript); // Automatically send the message
       setIsListening(false);
     };
@@ -87,22 +85,40 @@ function App() {
   return (
     <div
       style={{
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "'Roboto', sans-serif",
         height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
-        background: "linear-gradient(135deg, #ff7f7f, #ffcccb)",
+        background: "linear-gradient(135deg, #89cff0, #6a5acd)",
         color: "#ffffff",
+        padding: "20px",
         overflow: "hidden",
       }}
     >
+      {/* Balloons */}
+      {[...Array(10)].map((_, i) => (
+        <div
+          key={i}
+          style={{
+            position: "absolute",
+            width: "30px",
+            height: "50px",
+            background: `hsl(${Math.random() * 360}, 70%, 80%)`,
+            borderRadius: "50% 50% 50% 50%",
+            left: `${Math.random() * 100}%`,
+            bottom: `-${Math.random() * 20}px`,
+            animation: `fly ${Math.random() * 5 + 5}s linear infinite`,
+          }}
+        />
+      ))}
+
       {/* Chat Container */}
       <div
         style={{
-          background: "rgba(255, 255, 255, 0.95)",
+          background: "#ffffff",
           color: "#333",
           width: "100%",
           maxWidth: "600px",
@@ -112,18 +128,28 @@ function App() {
         }}
       >
         {/* Welcome Header */}
-        <h1 style={{ textAlign: "center", marginBottom: "10px", color: "#ff4c4c" }}>
-          Welcome to HealthGuru
-        </h1>
         <h1
           style={{
             textAlign: "center",
             marginBottom: "10px",
-            color: "#4caf50",
+            fontSize: "28px",
+            color: "#ff4c4c",
+            fontWeight: "bold",
           }}
         >
-          Your Personal Health Guide
+          Welcome to HealthGuru 🎉
         </h1>
+        <h2
+          style={{
+            textAlign: "center",
+            marginBottom: "20px",
+            fontSize: "18px",
+            color: "#4caf50",
+            fontWeight: "normal",
+          }}
+        >
+          Your Personal Health Guide 🌟
+        </h2>
 
         {/* Chat Window */}
         <div
@@ -141,10 +167,11 @@ function App() {
             <p
               key={idx}
               style={{
-                textAlign: msg.sender === "HealthGuru" ? "left" : "right",
-                color: msg.sender === "HealthGuru" ? "#4caf50" : "#333",
-                fontStyle: msg.sender === "HealthGuru" ? "italic" : "normal",
+                textAlign: msg.sender === "HealthGuru 🤖" ? "left" : "right",
+                color: msg.sender === "HealthGuru 🤖" ? "#4caf50" : "#333",
+                fontStyle: msg.sender === "HealthGuru 🤖" ? "italic" : "normal",
                 fontWeight: "bold",
+                margin: "5px 0",
               }}
             >
               <strong>{msg.sender}: </strong>
@@ -153,40 +180,46 @@ function App() {
           ))}
         </div>
 
-        {/* Input and Speak Button */}
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            style={{
-              flex: "1",
-              padding: "10px",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              marginRight: "10px",
-              fontSize: "16px",
-            }}
-            placeholder="Type your health question or click Speak..."
-            disabled
-          />
+        {/* Speak Button */}
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <button
             onClick={startListening}
             style={{
               background: isListening ? "#ffcc00" : "#007bff",
               color: "#ffffff",
               border: "none",
-              padding: "10px 20px",
-              borderRadius: "5px",
-              fontSize: "16px",
+              padding: "10px 30px",
+              borderRadius: "50px",
+              fontSize: "18px",
               cursor: "pointer",
-              marginRight: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
             }}
           >
             {isListening ? "Listening..." : "Speak"}
+            <span role="img" aria-label="microphone">
+              🎙️
+            </span>
           </button>
         </div>
       </div>
+
+      {/* Balloon Animation Keyframes */}
+      <style>
+        {`
+        @keyframes fly {
+          0% {
+            transform: translateY(0) rotate(0deg);
+          }
+          100% {
+            transform: translateY(-150vh) rotate(360deg);
+          }
+        }
+        `}
+      </style>
     </div>
   );
 }
