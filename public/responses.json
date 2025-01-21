@@ -44,24 +44,12 @@
     "response": "Ideal weight depends on your BMI (Body Mass Index). You can calculate it using your height and weight."
   },
   {
-    "question": "what is BMI",
-    "response": "BMI stands for Body Mass Index. It is a measure of body fat based on your weight in relation to your height."
-  },
-  {
     "question": "what are the symptoms of dehydration",
     "response": "Symptoms of dehydration include dry mouth, dark urine, fatigue, dizziness, and increased thirst."
   },
   {
     "question": "how can I boost my immunity",
     "response": "To boost immunity, eat a balanced diet, exercise regularly, get enough sleep, and stay hydrated."
-  },
-  {
-    "question": "what are the signs of stress",
-    "response": "Signs of stress include headaches, fatigue, irritability, difficulty sleeping, and changes in appetite."
-  },
-  {
-    "question": "how can I reduce stress",
-    "response": "To reduce stress, practice relaxation techniques like deep breathing, meditation, or yoga. Also, maintain a healthy lifestyle."
   },
   {
     "question": "how often should I exercise",
@@ -106,132 +94,33 @@
   {
     "question": "what are the benefits of yoga",
     "response": "Yoga improves flexibility, strength, and balance. It also reduces stress, improves sleep, and boosts mental clarity."
-  }
-  {
-    "question": "what are the signs of a healthy lifestyle",
-    "response": "Signs of a healthy lifestyle include good energy levels, quality sleep, balanced meals, regular exercise, and stable mental health."
-  },
-  {
-    "question": "how do I improve digestion",
-    "response": "To improve digestion, eat more fiber-rich foods, stay hydrated, eat slowly, and avoid overeating."
   },
   {
     "question": "what foods are good for brain health",
     "response": "Foods like blueberries, nuts, fish rich in omega-3, and leafy greens are excellent for brain health."
   },
   {
-    "question": "what is the best time to exercise",
-    "response": "The best time to exercise depends on your routine, but morning workouts often improve consistency and energy levels."
-  },
-  {
-    "question": "how can I manage weight effectively",
-    "response": "To manage weight, maintain a calorie balance, exercise regularly, and avoid sugary or processed foods."
-  },
-  {
-    "question": "what are the symptoms of high blood pressure",
-    "response": "Symptoms of high blood pressure include headaches, dizziness, chest pain, and blurred vision."
-  },
-  {
-    "question": "how do I lower my blood pressure naturally",
-    "response": "To lower blood pressure naturally, reduce salt intake, eat potassium-rich foods, exercise regularly, and manage stress."
-  },
-  {
-    "question": "what is the best way to quit smoking",
-    "response": "To quit smoking, seek support from friends and family, consider nicotine replacement therapy, and avoid triggers."
-  },
-  {
-    "question": "what are the benefits of meditation",
-    "response": "Meditation reduces stress, improves focus, enhances emotional well-being, and can help lower blood pressure."
-  },
-  {
-    "question": "what are the symptoms of food poisoning",
-    "response": "Symptoms include nausea, vomiting, diarrhea, stomach cramps, and fever."
-  },
-  {
-    "question": "how do I treat food poisoning",
-    "response": "Rest, stay hydrated, and eat bland foods like rice or toast. Seek medical help if symptoms persist."
-  },
-  {
-    "question": "how do I build muscle",
-    "response": "To build muscle, consume protein-rich foods, engage in strength training, and ensure adequate rest and recovery."
-  },
-  {
-    "question": "what are the benefits of walking daily",
-    "response": "Walking daily improves cardiovascular health, reduces stress, strengthens muscles, and aids in weight management."
-  },
-  {
-    "question": "how can I prevent back pain",
-    "response": "To prevent back pain, maintain good posture, exercise regularly, and avoid lifting heavy objects improperly."
-  },
-  {
-    "question": "what are the benefits of eating fruits",
-    "response": "Fruits are rich in vitamins, minerals, fiber, and antioxidants, supporting overall health and immunity."
-  },
-  {
-    "question": "what are the symptoms of vitamin D deficiency",
-    "response": "Symptoms include fatigue, bone pain, muscle weakness, and frequent infections."
-  },
-  {
-    "question": "how do I boost my energy levels",
-    "response": "To boost energy, get enough sleep, eat balanced meals, stay hydrated, and exercise regularly."
-  },
-  {
-    "question": "how do I manage anxiety",
-    "response": "To manage anxiety, practice relaxation techniques, stay active, maintain a healthy diet, and consider therapy if needed."
-  },
-  {
     "question": "what are superfoods",
     "response": "Superfoods are nutrient-rich foods like kale, quinoa, salmon, and chia seeds that provide multiple health benefits."
   },
   {
-    "question": "how can I reduce sugar intake",
-    "response": "To reduce sugar intake, avoid sugary drinks, choose natural sweeteners, and read food labels for hidden sugars."
+    "question": "what are the symptoms of stress",
+    "response": "Signs of stress include headaches, fatigue, irritability, difficulty sleeping, and changes in appetite."
   },
   {
-    "question": "how do I prevent seasonal allergies",
-    "response": "To prevent allergies, limit exposure to allergens, use air purifiers, and consult a doctor for medications if needed."
+    "question": "how can I reduce stress",
+    "response": "To reduce stress, practice relaxation techniques like deep breathing, meditation, or yoga. Also, maintain a healthy lifestyle."
   },
   {
-    "question": "what are the benefits of probiotics",
-    "response": "Probiotics support gut health, improve digestion, and may boost immunity."
+    "question": "how do I quit smoking",
+    "response": "To quit smoking, seek support from friends and family, consider nicotine replacement therapy, and avoid triggers."
   },
   {
-    "question": "how can I improve my eyesight naturally",
-    "response": "Eat foods rich in vitamin A, take breaks from screens, wear sunglasses outdoors, and stay hydrated."
+    "question": "what are probiotics",
+    "response": "Probiotics support gut health, improve digestion, and may boost immunity. They are found in foods like yogurt and kefir."
   },
   {
-    "question": "how do I prevent heart disease",
-    "response": "To prevent heart disease, eat a heart-healthy diet, exercise regularly, avoid smoking, and manage stress."
-  },
-  {
-    "question": "what are the symptoms of a migraine",
-    "response": "Migraine symptoms include severe headaches, nausea, sensitivity to light and sound, and blurred vision."
-  },
-  {
-    "question": "how do I manage migraine attacks",
-    "response": "Rest in a dark, quiet room, stay hydrated, use cold compresses, and consider over-the-counter pain relief."
-  },
-  {
-    "question": "how do I prevent obesity",
-    "response": "To prevent obesity, eat a balanced diet, exercise regularly, and avoid processed or sugary foods."
-  },
-  {
-    "question": "what foods help reduce cholesterol",
-    "response": "Foods like oats, nuts, fatty fish, and olive oil can help reduce cholesterol levels."
-  },
-  {
-    "question": "how can I improve my immune system",
-    "response": "Boost your immune system by eating healthy, exercising, managing stress, and getting enough sleep."
-  },
-  {
-    "question": "how can I recover faster after a workout",
-    "response": "To recover faster, hydrate, eat protein-rich foods, stretch, and get adequate rest."
-  },
-  {
-    "question": "what are the symptoms of iron deficiency",
-    "response": "Symptoms include fatigue, pale skin, shortness of breath, and dizziness."
-  },
-  {
-    "question": "how can I increase iron levels naturally",
-    "response": "Eat iron-rich foods like spinach, red meat, lentils, and fortified cereals. Pair them with vitamin C for better absorption."
+    "question": "how do I lower my cholesterol",
+    "response": "To lower cholesterol, eat fiber-rich foods, avoid trans fats, exercise regularly, and maintain a healthy weight."
   }
+]
