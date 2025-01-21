@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
-  const [responses, setResponses] = useState([]);
+  const [messages, setMessages] = useState([]); // Stores the conversation messages
+  const [input, setInput] = useState(""); // Stores the user input
+  const [responses, setResponses] = useState([]); // Stores the fetched responses
 
-  // Load responses from the JSON file
+  // Load responses from the JSON file in the public folder
   useEffect(() => {
-    fetch("/responses.json")
-      .then((res) => res.json())
+    fetch("/responses.json") // Fetches the responses.json file
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => setResponses(data))
       .catch((err) => console.error("Error loading responses:", err));
   }, []);
 
+  // Get a response for the user's input
   const getResponse = (message) => {
+    if (!responses || responses.length === 0) {
+      return "Sorry, I couldn't load my knowledge base. Please try again later.";
+    }
     const lowerMessage = message.toLowerCase();
     const match = responses.find((item) =>
       lowerMessage.includes(item.question.toLowerCase())
@@ -23,6 +32,7 @@ function App() {
       : "I'm not sure how to respond to that. Can you ask me something else?";
   };
 
+  // Handle sending a message
   const sendMessage = () => {
     if (input.trim()) {
       setMessages([...messages, { sender: "User", text: input }]);
@@ -49,9 +59,10 @@ function App() {
         position: "relative",
         background: "linear-gradient(135deg, #ff7f7f, #ffcccb)",
         color: "#ffffff",
-        overflow: "hidden", // Hide any overflow for decorations
+        overflow: "hidden",
       }}
     >
+      {/* Chat Container */}
       <div
         style={{
           background: "rgba(255, 255, 255, 0.95)",
@@ -67,8 +78,6 @@ function App() {
         <h1 style={{ textAlign: "center", marginBottom: "10px", color: "#ff4c4c" }}>
           Welcome to HealthGuru
         </h1>
-
-        {/* Chatbot Title */}
         <h1
           style={{
             textAlign: "center",
@@ -87,7 +96,7 @@ function App() {
             padding: "10px",
             height: "300px",
             overflowY: "scroll",
-            backgroundColor: "#f9f9f9",
+            backgroundColor: "#f4f4f9",
             marginBottom: "15px",
           }}
         >
