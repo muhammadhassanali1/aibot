@@ -30,7 +30,7 @@ function App() {
       setTimeout(() => {
         setMessages((prevMessages) => [
           ...prevMessages,
-          { sender: "AI", text: response },
+          { sender: "HealthGuru", text: response },
         ]);
       }, 1000);
       setInput("");
@@ -46,16 +46,15 @@ function App() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/5/5e/Student_with_cap_and_gown.jpg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        position: "relative",
+        background: "linear-gradient(135deg, #ff7f7f, #ffcccb)",
         color: "#ffffff",
-        padding: "20px",
+        overflow: "hidden", // Hide any overflow for decorations
       }}
     >
       <div
         style={{
-          background: "rgba(255, 255, 255, 0.9)", // Transparent white background for readability
+          background: "rgba(255, 255, 255, 0.95)",
           color: "#333",
           width: "100%",
           maxWidth: "600px",
@@ -65,8 +64,8 @@ function App() {
         }}
       >
         {/* Welcome Header */}
-        <h1 style={{ textAlign: "center", marginBottom: "10px", color: "#6a5acd" }}>
-          Welcome to AasaanScholarship.com
+        <h1 style={{ textAlign: "center", marginBottom: "10px", color: "#ff4c4c" }}>
+          Welcome to HealthGuru
         </h1>
 
         {/* Chatbot Title */}
@@ -77,7 +76,7 @@ function App() {
             color: "#4caf50",
           }}
         >
-          AasaanScholarship.com
+          Your Personal Health Guide
         </h1>
 
         {/* Chat Window */}
@@ -88,7 +87,7 @@ function App() {
             padding: "10px",
             height: "300px",
             overflowY: "scroll",
-            backgroundColor: "#f4f4f9",
+            backgroundColor: "#f9f9f9",
             marginBottom: "15px",
           }}
         >
@@ -96,9 +95,9 @@ function App() {
             <p
               key={idx}
               style={{
-                textAlign: msg.sender === "AI" ? "left" : "right",
-                color: msg.sender === "AI" ? "#4caf50" : "#333",
-                fontStyle: msg.sender === "AI" ? "italic" : "normal",
+                textAlign: msg.sender === "HealthGuru" ? "left" : "right",
+                color: msg.sender === "HealthGuru" ? "#4caf50" : "#333",
+                fontStyle: msg.sender === "HealthGuru" ? "italic" : "normal",
                 fontWeight: "bold",
               }}
             >
@@ -108,7 +107,7 @@ function App() {
           ))}
         </div>
 
-        {/* Input and Button */}
+        {/* Input and Ask Button */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
@@ -122,7 +121,7 @@ function App() {
               marginRight: "10px",
               fontSize: "16px",
             }}
-            placeholder="Type your message..."
+            placeholder="Type your health question..."
           />
           <button
             onClick={sendMessage}
@@ -137,7 +136,7 @@ function App() {
               boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
             }}
           >
-            Send
+            Ask
           </button>
         </div>
       </div>
