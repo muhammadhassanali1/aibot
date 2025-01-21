@@ -1,118 +1,237 @@
 [
   {
-    "question": "what are scholarships",
-    "response": "Scholarships are financial awards given to students to help them pursue education without repayment. They can be based on merit, financial need, or specific skills."
+    "question": "hello",
+    "response": "Hi! How can I assist you with your health today?"
   },
   {
-    "question": "how do scholarships work",
-    "response": "Scholarships provide funding for tuition, living expenses, or both. Some are fully-funded, while others cover only part of the costs."
+    "question": "hi",
+    "response": "Hello! Do you have any health-related questions?"
   },
   {
-    "question": "are scholarships taxable",
-    "response": "In most cases, scholarships used for tuition and educational expenses are not taxable. Check your country’s tax laws for specific details."
+    "question": "good morning",
+    "response": "Good morning! How can I help you stay healthy today?"
   },
   {
-    "question": "do scholarships have age limits",
-    "response": "Some scholarships have age limits, while others do not. Always check the eligibility criteria for the specific scholarship."
+    "question": "good night",
+    "response": "Good night! Remember, good sleep is essential for health."
   },
   {
-    "question": "can I apply for scholarships without IELTS",
-    "response": "Yes, some universities and organizations offer scholarships without requiring IELTS if you meet other language proficiency criteria."
+    "question": "how are you",
+    "response": "I'm just a chatbot, but I'm here to help you feel your best!"
   },
   {
-    "question": "can I get a scholarship for online courses",
-    "response": "Yes, many platforms like Coursera and edX offer scholarships or financial aid for their online courses."
+    "question": "what’s your name",
+    "response": "My name is HealthGuru. I’m here to guide you on your health journey!"
   },
   {
-    "question": "are scholarships only for academic excellence",
-    "response": "No, scholarships can also be awarded for athletic skills, leadership, community service, or specific talents like art or music."
+    "question": "what is a balanced diet",
+    "response": "A balanced diet includes fruits, vegetables, whole grains, proteins, and healthy fats in the right proportions."
   },
   {
-    "question": "what is the difference between grants and scholarships",
-    "response": "Grants are often need-based and provided by governments or organizations, while scholarships can be merit-based or need-based."
+    "question": "how much water should I drink daily",
+    "response": "It is recommended to drink 8-10 glasses of water daily, but this can vary based on your activity level and climate."
   },
   {
-    "question": "can I defer my scholarship",
-    "response": "Some scholarships allow deferral for a valid reason. Check with the scholarship provider for their policy."
+    "question": "what are the benefits of exercise",
+    "response": "Regular exercise improves heart health, boosts mood, strengthens muscles, and helps maintain a healthy weight."
   },
   {
-    "question": "how competitive are scholarships",
-    "response": "Scholarships can be highly competitive, especially fully-funded ones. A strong application increases your chances."
+    "question": "how can I improve my sleep",
+    "response": "To improve sleep, maintain a consistent schedule, avoid screens before bedtime, and create a relaxing environment."
   },
   {
-    "question": "do scholarships cover travel expenses",
-    "response": "Some fully-funded scholarships include travel expenses, while others do not. Check the details of the specific scholarship."
+    "question": "what is the ideal weight for my height",
+    "response": "Ideal weight depends on your BMI (Body Mass Index). You can calculate it using your height and weight."
   },
   {
-    "question": "what is a scholarship interview",
-    "response": "A scholarship interview is part of the selection process where applicants are assessed on their qualifications, goals, and personality."
+    "question": "what is BMI",
+    "response": "BMI stands for Body Mass Index. It is a measure of body fat based on your weight in relation to your height."
   },
   {
-    "question": "how can I prepare for a scholarship interview",
-    "response": "To prepare:\n- Research the scholarship and provider\n- Practice common interview questions\n- Be clear about your goals and achievements."
+    "question": "what are the symptoms of dehydration",
+    "response": "Symptoms of dehydration include dry mouth, dark urine, fatigue, dizziness, and increased thirst."
   },
   {
-    "question": "are there scholarships for women",
-    "response": "Yes, many scholarships specifically support women to promote gender equality in education and career fields."
+    "question": "how can I boost my immunity",
+    "response": "To boost immunity, eat a balanced diet, exercise regularly, get enough sleep, and stay hydrated."
   },
   {
-    "question": "what are sports scholarships",
-    "response": "Sports scholarships are awarded to students with exceptional athletic skills. These often cover tuition and other expenses."
+    "question": "what are the signs of stress",
+    "response": "Signs of stress include headaches, fatigue, irritability, difficulty sleeping, and changes in appetite."
   },
   {
-    "question": "are there scholarships for medical students",
-    "response": "Yes, many organizations and universities offer scholarships specifically for medical students, often with service commitments."
+    "question": "how can I reduce stress",
+    "response": "To reduce stress, practice relaxation techniques like deep breathing, meditation, or yoga. Also, maintain a healthy lifestyle."
   },
   {
-    "question": "how do I write a recommendation letter for a scholarship",
-    "response": "A recommendation letter should highlight the applicant’s strengths, achievements, and potential. Focus on specific examples of excellence."
+    "question": "how often should I exercise",
+    "response": "Aim for at least 150 minutes of moderate aerobic exercise or 75 minutes of vigorous exercise per week."
   },
   {
-    "question": "can I get a scholarship for studying abroad",
-    "response": "Yes, many scholarships are available for international students, including government-funded programs like Fulbright and Chevening."
+    "question": "what is a healthy heart rate",
+    "response": "A healthy resting heart rate is typically between 60 and 100 beats per minute for adults."
   },
   {
-    "question": "what are government scholarships",
-    "response": "Government scholarships are funded by national or regional governments to support students' education. Examples include HEC scholarships in Pakistan and DAAD in Germany."
+    "question": "how can I improve my mental health",
+    "response": "To improve mental health, stay connected with loved ones, practice mindfulness, exercise, and seek professional help if needed."
   },
   {
-    "question": "are scholarships renewable every year",
-    "response": "Some scholarships are renewable based on your academic performance or other criteria. Check the specific scholarship's terms."
+    "question": "what are the benefits of staying hydrated",
+    "response": "Staying hydrated improves energy levels, supports digestion, maintains skin health, and regulates body temperature."
   },
   {
-    "question": "can I get a scholarship after admission",
-    "response": "Yes, some universities offer scholarships to enrolled students based on merit or financial need."
+    "question": "how can I protect myself from infections",
+    "response": "Wash your hands regularly, eat a healthy diet, stay hydrated, and maintain proper hygiene to reduce the risk of infections."
   },
   {
-    "question": "how do I improve my chances of getting a scholarship",
-    "response": "To improve your chances:\n- Apply early\n- Focus on your SOP and recommendation letters\n- Ensure you meet all criteria."
+    "question": "how much sleep do I need",
+    "response": "Adults typically need 7-9 hours of sleep per night, while children and teenagers require more."
   },
   {
-    "question": "are there scholarships for specific fields of study",
-    "response": "Yes, many scholarships are designed for specific fields like engineering, medicine, education, or the arts."
+    "question": "what are the benefits of a healthy lifestyle",
+    "response": "A healthy lifestyle reduces the risk of chronic diseases, improves mental health, and increases energy and longevity."
   },
   {
-    "question": "can scholarships be combined with other financial aid",
-    "response": "Some scholarships allow you to combine them with financial aid or other scholarships. Always check the terms and conditions."
+    "question": "how can I prevent diabetes",
+    "response": "To prevent diabetes, maintain a healthy weight, eat a balanced diet, exercise regularly, and monitor your blood sugar levels."
   },
   {
-    "question": "what happens if I fail to meet scholarship requirements",
-    "response": "Failing to meet requirements may result in the scholarship being withdrawn. Some providers may allow a grace period to improve performance."
+    "question": "what are the symptoms of a common cold",
+    "response": "Symptoms of a common cold include a runny nose, sore throat, coughing, sneezing, and mild fever."
   },
   {
-    "question": "do I need work experience for scholarships",
-    "response": "Some scholarships, especially for postgraduate studies, require work experience. Check the eligibility criteria for details."
+    "question": "how can I recover from a cold quickly",
+    "response": "Rest, stay hydrated, and consume warm fluids like soup or tea. Over-the-counter medications can also help alleviate symptoms."
   },
   {
-    "question": "are there scholarships for people with disabilities",
-    "response": "Yes, many organizations offer scholarships specifically for individuals with disabilities to support inclusive education."
-  },
-  {
-    "question": "how do I find scholarships for specific countries",
-    "response": "You can find scholarships for specific countries by:\n- Visiting university websites\n- Checking government programs\n- Using scholarship databases."
-  },
-  {
-    "question": "can I apply for scholarships with a gap year",
-    "response": "Yes, many scholarships accept applications from students who have taken a gap year, as long as you meet the criteria."
+    "question": "what are the benefits of yoga",
+    "response": "Yoga improves flexibility, strength, and balance. It also reduces stress, improves sleep, and boosts mental clarity."
   }
-]
+  {
+    "question": "what are the signs of a healthy lifestyle",
+    "response": "Signs of a healthy lifestyle include good energy levels, quality sleep, balanced meals, regular exercise, and stable mental health."
+  },
+  {
+    "question": "how do I improve digestion",
+    "response": "To improve digestion, eat more fiber-rich foods, stay hydrated, eat slowly, and avoid overeating."
+  },
+  {
+    "question": "what foods are good for brain health",
+    "response": "Foods like blueberries, nuts, fish rich in omega-3, and leafy greens are excellent for brain health."
+  },
+  {
+    "question": "what is the best time to exercise",
+    "response": "The best time to exercise depends on your routine, but morning workouts often improve consistency and energy levels."
+  },
+  {
+    "question": "how can I manage weight effectively",
+    "response": "To manage weight, maintain a calorie balance, exercise regularly, and avoid sugary or processed foods."
+  },
+  {
+    "question": "what are the symptoms of high blood pressure",
+    "response": "Symptoms of high blood pressure include headaches, dizziness, chest pain, and blurred vision."
+  },
+  {
+    "question": "how do I lower my blood pressure naturally",
+    "response": "To lower blood pressure naturally, reduce salt intake, eat potassium-rich foods, exercise regularly, and manage stress."
+  },
+  {
+    "question": "what is the best way to quit smoking",
+    "response": "To quit smoking, seek support from friends and family, consider nicotine replacement therapy, and avoid triggers."
+  },
+  {
+    "question": "what are the benefits of meditation",
+    "response": "Meditation reduces stress, improves focus, enhances emotional well-being, and can help lower blood pressure."
+  },
+  {
+    "question": "what are the symptoms of food poisoning",
+    "response": "Symptoms include nausea, vomiting, diarrhea, stomach cramps, and fever."
+  },
+  {
+    "question": "how do I treat food poisoning",
+    "response": "Rest, stay hydrated, and eat bland foods like rice or toast. Seek medical help if symptoms persist."
+  },
+  {
+    "question": "how do I build muscle",
+    "response": "To build muscle, consume protein-rich foods, engage in strength training, and ensure adequate rest and recovery."
+  },
+  {
+    "question": "what are the benefits of walking daily",
+    "response": "Walking daily improves cardiovascular health, reduces stress, strengthens muscles, and aids in weight management."
+  },
+  {
+    "question": "how can I prevent back pain",
+    "response": "To prevent back pain, maintain good posture, exercise regularly, and avoid lifting heavy objects improperly."
+  },
+  {
+    "question": "what are the benefits of eating fruits",
+    "response": "Fruits are rich in vitamins, minerals, fiber, and antioxidants, supporting overall health and immunity."
+  },
+  {
+    "question": "what are the symptoms of vitamin D deficiency",
+    "response": "Symptoms include fatigue, bone pain, muscle weakness, and frequent infections."
+  },
+  {
+    "question": "how do I boost my energy levels",
+    "response": "To boost energy, get enough sleep, eat balanced meals, stay hydrated, and exercise regularly."
+  },
+  {
+    "question": "how do I manage anxiety",
+    "response": "To manage anxiety, practice relaxation techniques, stay active, maintain a healthy diet, and consider therapy if needed."
+  },
+  {
+    "question": "what are superfoods",
+    "response": "Superfoods are nutrient-rich foods like kale, quinoa, salmon, and chia seeds that provide multiple health benefits."
+  },
+  {
+    "question": "how can I reduce sugar intake",
+    "response": "To reduce sugar intake, avoid sugary drinks, choose natural sweeteners, and read food labels for hidden sugars."
+  },
+  {
+    "question": "how do I prevent seasonal allergies",
+    "response": "To prevent allergies, limit exposure to allergens, use air purifiers, and consult a doctor for medications if needed."
+  },
+  {
+    "question": "what are the benefits of probiotics",
+    "response": "Probiotics support gut health, improve digestion, and may boost immunity."
+  },
+  {
+    "question": "how can I improve my eyesight naturally",
+    "response": "Eat foods rich in vitamin A, take breaks from screens, wear sunglasses outdoors, and stay hydrated."
+  },
+  {
+    "question": "how do I prevent heart disease",
+    "response": "To prevent heart disease, eat a heart-healthy diet, exercise regularly, avoid smoking, and manage stress."
+  },
+  {
+    "question": "what are the symptoms of a migraine",
+    "response": "Migraine symptoms include severe headaches, nausea, sensitivity to light and sound, and blurred vision."
+  },
+  {
+    "question": "how do I manage migraine attacks",
+    "response": "Rest in a dark, quiet room, stay hydrated, use cold compresses, and consider over-the-counter pain relief."
+  },
+  {
+    "question": "how do I prevent obesity",
+    "response": "To prevent obesity, eat a balanced diet, exercise regularly, and avoid processed or sugary foods."
+  },
+  {
+    "question": "what foods help reduce cholesterol",
+    "response": "Foods like oats, nuts, fatty fish, and olive oil can help reduce cholesterol levels."
+  },
+  {
+    "question": "how can I improve my immune system",
+    "response": "Boost your immune system by eating healthy, exercising, managing stress, and getting enough sleep."
+  },
+  {
+    "question": "how can I recover faster after a workout",
+    "response": "To recover faster, hydrate, eat protein-rich foods, stretch, and get adequate rest."
+  },
+  {
+    "question": "what are the symptoms of iron deficiency",
+    "response": "Symptoms include fatigue, pale skin, shortness of breath, and dizziness."
+  },
+  {
+    "question": "how can I increase iron levels naturally",
+    "response": "Eat iron-rich foods like spinach, red meat, lentils, and fortified cereals. Pair them with vitamin C for better absorption."
+  }
