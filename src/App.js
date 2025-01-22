@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+// Utility function to remove emojis
+const removeEmojis = (text) => {
+  return text.replace(/[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, "");
+};
+
 function App() {
-  const [messages, setMessages] = useState([]); // Conversation messages
-  const [responses, setResponses] = useState([]); // Bot responses
-  const [isListening, setIsListening] = useState(false); // Tracks listening state
+  const [messages, setMessages] = useState([]);
+  const [responses, setResponses] = useState([]);
+  const [isListening, setIsListening] = useState(false);
 
   // Load responses from the JSON file
   useEffect(() => {
@@ -32,10 +37,10 @@ function App() {
       : "🤔 I'm not sure how to respond to that. Can you ask me something else?";
   };
 
-  // Speak the bot's response
+  // Speak the bot's response (excluding emojis)
   const speak = (text) => {
     const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(removeEmojis(text)); // Remove emojis before speaking
     utterance.lang = "en-US";
     synth.speak(utterance);
   };
@@ -98,23 +103,6 @@ function App() {
         overflow: "hidden",
       }}
     >
-      {/* Balloons */}
-      {[...Array(10)].map((_, i) => (
-        <div
-          key={i}
-          style={{
-            position: "absolute",
-            width: "30px",
-            height: "50px",
-            background: `hsl(${Math.random() * 360}, 70%, 80%)`,
-            borderRadius: "50% 50% 50% 50%",
-            left: `${Math.random() * 100}%`,
-            bottom: `-${Math.random() * 20}px`,
-            animation: `fly ${Math.random() * 5 + 5}s linear infinite`,
-          }}
-        />
-      ))}
-
       {/* Chat Container */}
       <div
         style={{
@@ -206,20 +194,6 @@ function App() {
           </button>
         </div>
       </div>
-
-      {/* Balloon Animation Keyframes */}
-      <style>
-        {`
-        @keyframes fly {
-          0% {
-            transform: translateY(0) rotate(0deg);
-          }
-          100% {
-            transform: translateY(-150vh) rotate(360deg);
-          }
-        }
-        `}
-      </style>
     </div>
   );
 }
