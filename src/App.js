@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './App.css'; // For additional styling and animations
 
 // Utility function to remove emojis
 const removeEmojis = (text) => {
@@ -10,6 +11,7 @@ function App() {
   const [responses, setResponses] = useState([]);
   const [isListening, setIsListening] = useState(false);
   const [serviceMode, setServiceMode] = useState(null); // Added service mode state
+  const [inputText, setInputText] = useState(""); // For text input
 
   // Load responses from the JSON file
   useEffect(() => {
@@ -46,7 +48,7 @@ function App() {
     synth.speak(utterance);
   };
 
-  // Automatically handle sending a message after speaking
+  // Handle sending a message
   const handleSendMessage = (message) => {
     const userMessage = { sender: "User", text: message };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
@@ -90,142 +92,75 @@ function App() {
 
   if (!serviceMode) {
     return (
-      <div
-        style={{
-          fontFamily: "'Roboto', sans-serif",
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          background: "linear-gradient(135deg, #2e3b4e, #3b6978)",
-          color: "#ffffff",
-          padding: "20px",
-        }}
-      >
-        <h1 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "20px" }}>Welcome to HealthGuru</h1>
-        <h2 style={{ fontSize: "20px", marginBottom: "40px" }}>Choose your service mode</h2>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <button
-            onClick={() => setServiceMode("typing")}
-            style={buttonStyle}
-          >
-            Typing
-          </button>
-          <button
-            onClick={() => setServiceMode("speaking")}
-            style={buttonStyle}
-          >
-            Speaking
-          </button>
+      <div className="app-background">
+        <div className="service-mode-container">
+          <h1>Welcome to HealthGuru</h1>
+          <h2>Choose your service mode</h2>
+          <div className="button-group">
+            <button onClick={() => setServiceMode("typing")} className="service-button">
+              Typing
+            </button>
+            <button onClick={() => setServiceMode("speaking")} className="service-button">
+              Speaking
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div
-      style={{
-        fontFamily: "'Roboto', sans-serif",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "linear-gradient(135deg, #2e3b4e, #3b6978)",
-        color: "#ffffff",
-        padding: "20px",
-        overflow: "hidden",
-      }}
-    >
-      {/* Chat Container */}
-      <div
-        style={{
-          background: "#ffffff",
-          color: "#333",
-          width: "100%",
-          maxWidth: "600px",
-          borderRadius: "15px",
-          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
-          padding: "20px",
-        }}
-      >
-        <h1 style={{ textAlign: "center", marginBottom: "10px", fontSize: "28px", color: "#2e3b4e" }}>HealthGuru</h1>
+    <div className="app-background">
+      <div className="chat-container">
+        <h1>HealthGuru</h1>
 
-        {serviceMode === "speaking" ? (
-          <div style={{ display: "flex", justifyContent: "center", margin: "20px 0" }}>
-            <button
-              onClick={startListening}
-              style={{
-                background: isListening ? "#ffcc00" : "#007bff",
-                color: "#ffffff",
-                border: "none",
-                padding: "15px",
-                borderRadius: "50%",
-                fontSize: "20px",
-                cursor: "pointer",
-                boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
-              }}
-            >
-              🎙️
-            </button>
-          </div>
-        ) : (
-          <div style={{ marginBottom: "20px" }}>
-            <input
-              type="text"
-              placeholder="Type your message..."
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "10px",
-                border: "1px solid #ccc",
-                fontSize: "16px",
-              }}
-            />
-          </div>
-        )}
-
-        <div
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "10px",
-            padding: "10px",
-            height: "300px",
-            overflowY: "scroll",
-            backgroundColor: "#f4f4f9",
-            marginBottom: "15px",
-          }}
-        >
+        <div className="chat-window">
           {messages.map((msg, idx) => (
             <p
               key={idx}
-              style={{
-                textAlign: msg.sender === "HealthGuru 🤖" ? "left" : "right",
-                color: msg.sender === "HealthGuru 🤖" ? "#2e3b4e" : "#333",
-                fontWeight: "bold",
-                margin: "5px 0",
-              }}
+              className={msg.sender === "HealthGuru 🤖" ? "bot-message" : "user-message"}
             >
               <strong>{msg.sender}: </strong>
               {msg.text}
             </p>
           ))}
         </div>
+
+        {serviceMode === "typing" ? (
+          <div className="input-container">
+            <input
+              type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              placeholder="Type your message..."
+              className="text-input"
+            />
+            <button
+              onClick={() => {
+                handleSendMessage(inputText);
+                setInputText("");
+              }}
+              className="send-button"
+            >
+              Send
+            </button>
+          </div>
+        ) : (
+          <div className="mic-container">
+            <button onClick={startListening} className="mic-button">
+              {isListening ? "Listening..." : "Tap to Speak 🎙️"}
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="floating-animations">
+        <div className="balloon balloon1"></div>
+        <div className="balloon balloon2"></div>
+        <div className="balloon balloon3"></div>
       </div>
     </div>
   );
 }
-
-const buttonStyle = {
-  background: "#007bff",
-  color: "#ffffff",
-  border: "none",
-  padding: "10px 20px",
-  borderRadius: "5px",
-  fontSize: "18px",
-  cursor: "pointer",
-  boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
-};
 
 export default App;
