@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 
 // Utility function to remove emojis
 const removeEmojis = (text) => {
-  return text.replace(/[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, "");
+  return text.replace(/[🌀-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, "");
 };
 
 function App() {
   const [messages, setMessages] = useState([]);
   const [responses, setResponses] = useState([]);
   const [isListening, setIsListening] = useState(false);
+  const [serviceMode, setServiceMode] = useState(null); // Added service mode state
 
   // Load responses from the JSON file
   useEffect(() => {
@@ -87,6 +88,41 @@ function App() {
     recognition.start();
   };
 
+  if (!serviceMode) {
+    return (
+      <div
+        style={{
+          fontFamily: "'Roboto', sans-serif",
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          background: "linear-gradient(135deg, #2e3b4e, #3b6978)",
+          color: "#ffffff",
+          padding: "20px",
+        }}
+      >
+        <h1 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "20px" }}>Welcome to HealthGuru</h1>
+        <h2 style={{ fontSize: "20px", marginBottom: "40px" }}>Choose your service mode</h2>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <button
+            onClick={() => setServiceMode("typing")}
+            style={buttonStyle}
+          >
+            Typing
+          </button>
+          <button
+            onClick={() => setServiceMode("speaking")}
+            style={buttonStyle}
+          >
+            Speaking
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
@@ -96,8 +132,7 @@ function App() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        background: "linear-gradient(135deg, #89cff0, #6a5acd)",
+        background: "linear-gradient(135deg, #2e3b4e, #3b6978)",
         color: "#ffffff",
         padding: "20px",
         overflow: "hidden",
@@ -115,31 +150,42 @@ function App() {
           padding: "20px",
         }}
       >
-        {/* Welcome Header */}
-        <h1
-          style={{
-            textAlign: "center",
-            marginBottom: "10px",
-            fontSize: "28px",
-            color: "#ff4c4c",
-            fontWeight: "bold",
-          }}
-        >
-          Welcome to HealthGuru 🎉
-        </h1>
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "20px",
-            fontSize: "18px",
-            color: "#4caf50",
-            fontWeight: "normal",
-          }}
-        >
-          Your Personal Health Guide 🌟
-        </h2>
+        <h1 style={{ textAlign: "center", marginBottom: "10px", fontSize: "28px", color: "#2e3b4e" }}>HealthGuru</h1>
 
-        {/* Chat Window */}
+        {serviceMode === "speaking" ? (
+          <div style={{ display: "flex", justifyContent: "center", margin: "20px 0" }}>
+            <button
+              onClick={startListening}
+              style={{
+                background: isListening ? "#ffcc00" : "#007bff",
+                color: "#ffffff",
+                border: "none",
+                padding: "15px",
+                borderRadius: "50%",
+                fontSize: "20px",
+                cursor: "pointer",
+                boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
+              }}
+            >
+              🎙️
+            </button>
+          </div>
+        ) : (
+          <div style={{ marginBottom: "20px" }}>
+            <input
+              type="text"
+              placeholder="Type your message..."
+              style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "10px",
+                border: "1px solid #ccc",
+                fontSize: "16px",
+              }}
+            />
+          </div>
+        )}
+
         <div
           style={{
             border: "1px solid #ccc",
@@ -156,8 +202,7 @@ function App() {
               key={idx}
               style={{
                 textAlign: msg.sender === "HealthGuru 🤖" ? "left" : "right",
-                color: msg.sender === "HealthGuru 🤖" ? "#4caf50" : "#333",
-                fontStyle: msg.sender === "HealthGuru 🤖" ? "italic" : "normal",
+                color: msg.sender === "HealthGuru 🤖" ? "#2e3b4e" : "#333",
                 fontWeight: "bold",
                 margin: "5px 0",
               }}
@@ -167,35 +212,20 @@ function App() {
             </p>
           ))}
         </div>
-
-        {/* Speak Button */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            onClick={startListening}
-            style={{
-              background: isListening ? "#ffcc00" : "#007bff",
-              color: "#ffffff",
-              border: "none",
-              padding: "10px 30px",
-              borderRadius: "50px",
-              fontSize: "18px",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-              boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
-            }}
-          >
-            {isListening ? "Listening..." : "Speak"}
-            <span role="img" aria-label="microphone">
-              🎙️
-            </span>
-          </button>
-        </div>
       </div>
     </div>
   );
 }
+
+const buttonStyle = {
+  background: "#007bff",
+  color: "#ffffff",
+  border: "none",
+  padding: "10px 20px",
+  borderRadius: "5px",
+  fontSize: "18px",
+  cursor: "pointer",
+  boxShadow: "0 3px 6px rgba(0, 0, 0, 0.2)",
+};
 
 export default App;
